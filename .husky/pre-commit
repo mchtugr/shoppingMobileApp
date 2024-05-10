@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+valid_branch_regex="^(feat|fix|docs|refactor|build|chore|style|test)\/[a-zA-Z]+[\w-]+$"
+
+if ! [[ $branch_name =~ $valid_branch_regex ]]; then
+  echo "Error: Invalid branch name. Branch name must match the pattern $valid_branch_regex"
+  exit 1
+fi
+
+exit 0
