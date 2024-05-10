@@ -17,6 +17,8 @@
     "*.{js,jsx,ts,tsx}": "eslint --fix"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.5.20",
+    "@react-navigation/native": "^6.1.17",
     "commitlint": "^19.3.0",
     "native-base": "^3.4.28",
     "patch-package": "^8.0.0",
