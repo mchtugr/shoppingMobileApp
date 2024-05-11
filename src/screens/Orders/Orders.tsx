@@ -1,13 +1,12 @@
 import { Text, View } from 'native-base'
-
 import React from 'react'
 
-function Home(): React.JSX.Element {
+function Orders(): React.JSX.Element {
   return (
     <View>
-      <Text>Home Screen</Text>
+      <Text>Orders</Text>
     </View>
   )
 }
 
-export default Home
+export default Orders

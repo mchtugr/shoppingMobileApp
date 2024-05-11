@@ -19,11 +19,13 @@
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
+    "@react-navigation/stack": "^6.3.29",
     "commitlint": "^19.3.0",
     "native-base": "^3.4.28",
     "patch-package": "^8.0.0",
     "react": "18.2.0",
     "react-native": "0.74.1",
+    "react-native-gesture-handler": "^2.16.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.31.1",
     "react-native-svg": "^12.1.1",
