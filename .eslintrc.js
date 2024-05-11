@@ -7,14 +7,18 @@ module.exports = {
       'error',
       {
         groups: [
-          'index',
-          'sibling',
-          'parent',
-          'internal',
-          'external',
           'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
         ],
       },
     ],
+    semi: ['error', 'never'],
+    '@typescript-eslint/semi': 'off',
+    'no-unexpected-multiline': 'error',
   },
 }

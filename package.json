@@ -21,6 +21,7 @@
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.3.29",
     "commitlint": "^19.3.0",
+    "eslint-plugin-import": "^2.29.1",
     "native-base": "^3.4.28",
     "patch-package": "^8.0.0",
     "react": "18.2.0",

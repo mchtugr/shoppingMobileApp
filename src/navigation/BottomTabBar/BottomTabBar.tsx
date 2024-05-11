@@ -1,9 +1,10 @@
-import Home from '../../screens/Home/Home.tsx'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
+
+import Home from '../../screens/Home/Home.tsx'
 import Orders from '../../screens/Orders/Orders.tsx'
 import Profile from '../../screens/Profile/Profile.tsx'
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { routes } from '../routes.const.ts'
 
 const BottomTab = createBottomTabNavigator()
