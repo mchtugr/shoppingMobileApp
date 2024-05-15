@@ -1,10 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
-
-import ResetPassword from '../../screens/Auth/ResetPassword/ResetPassword'
-import SignIn from '../../screens/Auth/SignIn/SignIn'
-import Signup from '../../screens/Auth/SignUp/SignUp'
-import { routes } from '../routes.const'
+import { routes } from '~/navigation/routes.const'
+import ResetPassword from '~/screens/Auth/ResetPassword'
+import SignIn from '~/screens/Auth/SignIn'
+import Signup from '~/screens/Auth/SignUp'
 
 const Stack = createStackNavigator()
 

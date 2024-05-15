@@ -2,8 +2,7 @@ import { Button } from 'native-base'
 import * as React from 'react'
 import { Text, View } from 'react-native'
 import { useSelector } from 'react-redux'
-
-import { routes } from '../../../navigation/routes.const'
+import { routes } from '~/navigation/routes.const'
 
 interface SignInProps {
   navigation: any
