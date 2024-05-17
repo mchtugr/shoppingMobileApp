@@ -11,7 +11,7 @@ import {
 import * as React from 'react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { GestureResponderEvent, StyleSheet } from 'react-native'
+import { GestureResponderEvent } from 'react-native'
 import { useSelector } from 'react-redux'
 import * as Yup from 'yup'
 
@@ -106,7 +106,3 @@ const SignInForm = ({ onNavigateResetScreen }: SignInFormProps) => {
 }
 
 export default SignInForm
-
-const styles = StyleSheet.create({
-  container: {},
-})
