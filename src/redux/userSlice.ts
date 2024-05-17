@@ -12,6 +12,9 @@ export const userSlice = createSlice({
     signIn: (state, action) => {
       state.user = action.payload.user
     },
+    signUp: (state, action) => {
+      state.user = action.payload.user
+    },
     update: (state, action) => {
       state.user.name = action.payload.name
       state.user.email = action.payload.email

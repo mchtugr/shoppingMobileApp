@@ -6,14 +6,27 @@
     "password": "Password",
     "forgotPassword": "Forgot password?",
     "signIn": "Sign In",
-    "signingIn": "Signing In",
     "newUser": "I'm a new user.",
     "register": "Register"
   },
+  "register": {
+    "welcome": "Welcome",
+    "introText": "Sign up to continue",
+    "email": "Email",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "register": "Sign Up",
+    "signIn": "Sign In",
+    "alreadyRegistered": "Already have an account?"
+  },
   "validation": {
     "email": "Please enter a valid email",
+    "name": "Please enter a valid name",
     "min": "Too short",
     "max": "Too long",
-    "required": "Required field"
+    "required": "Required field",
+    "notMatch": "Passwords doesn't match"
   }
 }

@@ -1,17 +1,10 @@
 import { useFormik } from 'formik'
-import {
-  Box,
-  Button,
-  FormControl,
-  Icon,
-  Input,
-  Link,
-  VStack,
-} from 'native-base'
+import { Box, Button, FormControl, Input, Link, VStack } from 'native-base'
 import * as React from 'react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GestureResponderEvent } from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { useSelector } from 'react-redux'
 import * as Yup from 'yup'
 
@@ -30,22 +23,25 @@ const SignInForm = ({ onNavigateResetScreen }: SignInFormProps) => {
       .required(t('validation.required')),
     password: Yup.string()
       .min(6, t('validation.min'))
-      .max(10, t('validation.max'))
+      .max(20, t('validation.max'))
       .required(t('validation.required')),
   })
 
-  const { handleChange, handleSubmit, values, errors, touched } = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
-    validationSchema: LoginSchema,
-    onSubmit: val => {
-      console.log({ val, errors, touched })
-    },
-  })
+  const { handleChange, handleSubmit, isValid, values, errors, touched } =
+    useFormik({
+      validateOnMount: true,
+      initialValues: {
+        email: '',
+        password: '',
+      },
+      validationSchema: LoginSchema,
+      onSubmit: val => {
+        console.log({ val, errors, touched })
+      },
+    })
   return (
     <VStack space={3} mt="5">
+      {/* E-mail */}
       <FormControl isInvalid={touched.email && !!errors.email}>
         <Input
           value={values.email}
@@ -56,6 +52,8 @@ const SignInForm = ({ onNavigateResetScreen }: SignInFormProps) => {
         />
         <FormControl.ErrorMessage>*{errors.email}</FormControl.ErrorMessage>
       </FormControl>
+
+      {/* Password */}
       <FormControl isInvalid={touched.password && !!errors.password}>
         <Box alignItems="center">
           <Input
@@ -85,7 +83,7 @@ const SignInForm = ({ onNavigateResetScreen }: SignInFormProps) => {
         _text={{
           fontSize: 'xs',
           fontWeight: '500',
-          color: !authState.authLoading ? 'indigo.500' : 'coolGray.600',
+          color: !authState.loading ? 'indigo.500' : 'coolGray.600',
         }}
         alignSelf="flex-end"
         onPress={onNavigateResetScreen}>
@@ -93,12 +91,12 @@ const SignInForm = ({ onNavigateResetScreen }: SignInFormProps) => {
       </Link>
 
       <Button
-        isLoading={authState.authLoading}
-        isLoadingText={t('signIn.signingIn')}
+        isLoading={authState.loading}
+        isLoadingText={t('signIn.signIn')}
         mt="2"
         colorScheme="indigo"
         onPress={handleSubmit as unknown as (e: GestureResponderEvent) => void}
-        isDisabled={!values.email || !values.password}>
+        isDisabled={!isValid}>
         {t('signIn.signIn')}
       </Button>
     </VStack>
