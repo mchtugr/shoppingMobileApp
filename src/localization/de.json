@@ -1,5 +1,19 @@
 {
   "signIn": {
-    "welcome": "Willkommen"
+    "welcome": "Willkommen",
+    "introText": "Melden Sie sich an, um fortzufahren",
+    "email": "Email",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "signIn": "Anmelden",
+    "signingIn": "Einloggen",
+    "newUser": "Ich bin ein neuer Benutzer.",
+    "register": "Registrieren"
+  },
+  "validation": {
+    "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "min": "Zu kurz",
+    "max": "Zu lang",
+    "required": "Pflichtfeld"
   }
 }
