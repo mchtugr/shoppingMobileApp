@@ -1,5 +1,19 @@
 {
   "signIn": {
-    "welcome": "Welcome"
+    "welcome": "Welcome",
+    "introText": "Sign in to continue",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signingIn": "Signing In",
+    "newUser": "I'm a new user.",
+    "register": "Register"
+  },
+  "validation": {
+    "email": "Please enter a valid email",
+    "min": "Too short",
+    "max": "Too long",
+    "required": "Required field"
   }
 }

@@ -1,26 +1,55 @@
-import { Button } from 'native-base'
+import { Box, Center, HStack, Heading, Link, Text, View } from 'native-base'
 import * as React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Text, View } from 'react-native'
 import { useSelector } from 'react-redux'
+import SignInForm from '~/components/forms/SignInForm'
 import { routes } from '~/navigation/routes.const'
-
+import styles from './SignIn.styles'
 interface SignInProps {
   navigation: any
 }
 
-const SignIn = (props: SignInProps) => {
-  const user = useSelector((state: any) => state.user)
+const SignIn = ({ navigation }: SignInProps) => {
+  const authState = useSelector((state: any) => state.user.auth)
   const { t } = useTranslation()
 
   return (
-    <View>
-      <Text>
-        {t('signIn.welcome')} {user.name}
-      </Text>
-      <Button onPress={() => props.navigation.navigate(routes.signUp)}>
-        SignUp
-      </Button>
+    <View style={styles.container}>
+      <Center w="100%">
+        <Box safeArea p="2" py="8" w="90%" maxW="290">
+          <Heading size="lg" fontWeight="600" color="coolGray.800">
+            {t('signIn.welcome')}
+          </Heading>
+          <Heading mt="1" color="coolGray.600" fontWeight="medium" size="xs">
+            {t('signIn.introText')}
+          </Heading>
+
+          <View>
+            <SignInForm
+              onNavigateResetScreen={() =>
+                navigation.navigate(routes.resetPassword)
+              }
+            />
+            <HStack mt="6" justifyContent="center">
+              <Text fontSize="sm" color="coolGray.600">
+                {t('signIn.newUser')}
+              </Text>
+              <Link
+                _text={{
+                  color: !authState.authLoading ? 'indigo.500' : 'coolGray.600',
+                  fontWeight: 'medium',
+                  fontSize: 'sm',
+                }}
+                onPress={() =>
+                  !authState.authLoading && navigation.navigate(routes.signUp)
+                }>
+                {' '}
+                {t('signIn.register')}
+              </Link>
+            </HStack>
+          </View>
+        </Box>
+      </Center>
     </View>
   )
 }
