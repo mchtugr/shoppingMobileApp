@@ -3,7 +3,7 @@ import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import SignUpForm from '~/components/forms/SignUpForm'
-import { routes } from '~/navigation/routes.const'
+import { AuthStackRoutes } from '~/navigation/types'
 import styles from './SignUp.styles'
 
 interface SignupProps {
@@ -35,7 +35,7 @@ const Signup = ({ navigation }: SignupProps) => {
                   fontWeight: 'medium',
                   fontSize: 'sm',
                 }}
-                onPress={() => navigation.navigate(routes.signIn)}>
+                onPress={() => navigation.navigate(AuthStackRoutes.SignIn)}>
                 {t('register.signIn')}
               </Link>
             </HStack>
