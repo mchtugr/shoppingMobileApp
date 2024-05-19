@@ -3,7 +3,7 @@ import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import SignInForm from '~/components/forms/SignInForm'
-import { routes } from '~/navigation/routes.const'
+import { AuthStackRoutes } from '~/navigation/types'
 import styles from './SignIn.styles'
 interface SignInProps {
   navigation: any
@@ -26,8 +26,8 @@ const SignIn = ({ navigation }: SignInProps) => {
 
           <View>
             <SignInForm
-              onNavigateResetScreen={() =>
-                navigation.navigate(routes.resetPassword)
+              onNavigateForgotScreen={email =>
+                navigation.navigate(AuthStackRoutes.ForgotPassword, { email })
               }
             />
             <HStack mt="6" justifyContent="center">
@@ -41,7 +41,8 @@ const SignIn = ({ navigation }: SignInProps) => {
                   fontSize: 'sm',
                 }}
                 onPress={() =>
-                  !authState.authLoading && navigation.navigate(routes.signUp)
+                  !authState.authLoading &&
+                  navigation.navigate(AuthStackRoutes.SignIn)
                 }>
                 {' '}
                 {t('signIn.register')}

@@ -1,30 +1,47 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import { routes } from '~/navigation/routes.const'
 import Home from '~/screens/Home'
 import Orders from '~/screens/Orders'
 import Profile from '~/screens/Profile'
+import { BottomTabBarParamList, BottomTabBarRoutes } from '../types'
 
-const BottomTab = createBottomTabNavigator()
+const BOTTOM_TAB_BAR_ROUTES: Array<
+  React.ComponentProps<typeof BottomTab.Screen>
+> = [
+  {
+    name: BottomTabBarRoutes.Home,
+    component: Home,
+  },
+  {
+    name: BottomTabBarRoutes.Orders,
+    component: Orders,
+  },
+  {
+    name: BottomTabBarRoutes.Profile,
+    component: Profile,
+  },
+]
+
+const BottomTab = createBottomTabNavigator<BottomTabBarParamList>()
 
 function BottomTabBar(): React.JSX.Element {
   return (
     <BottomTab.Navigator
-      initialRouteName={routes.home}
+      initialRouteName={BottomTabBarRoutes.Home}
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarHideOnKeyboard: true,
         tabBarIcon: ({ color }) => {
           let iconName: string
           switch (route.name) {
-            case routes.home:
+            case BottomTabBarRoutes.Home:
               iconName = 'home'
               break
-            case routes.orders:
+            case BottomTabBarRoutes.Orders:
               iconName = 'receipt'
               break
-            case routes.profile:
+            case BottomTabBarRoutes.Profile:
               iconName = 'user-alt'
               break
             default:
@@ -33,9 +50,9 @@ function BottomTabBar(): React.JSX.Element {
           return <Icon name={iconName} size={20} color={color} />
         },
       })}>
-      <BottomTab.Screen name={routes.home} component={Home} />
-      <BottomTab.Screen name={routes.orders} component={Orders} />
-      <BottomTab.Screen name={routes.profile} component={Profile} />
+      {BOTTOM_TAB_BAR_ROUTES.map(routeConfig => (
+        <BottomTab.Screen key={routeConfig.name} {...routeConfig} />
+      ))}
     </BottomTab.Navigator>
   )
 }
