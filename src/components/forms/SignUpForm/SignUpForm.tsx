@@ -172,19 +172,7 @@ const SignUpForm = () => {
         isLoadingText={t('register.register')}
         mt="2"
         colorScheme="indigo"
-        isDisabled={
-          !isValid
-          // !values.email ||
-          // !!errors.email ||
-          // !values.firstName ||
-          // !!errors.firstName ||
-          // !values.lastName ||
-          // !!errors.lastName ||
-          // !values.password ||
-          // !!errors.password ||
-          // !values.confirmPassword ||
-          // !!errors.confirmPassword
-        }
+        isDisabled={!isValid}
         onPress={() => handleSubmit()}>
         {t('register.register')}
       </Button>

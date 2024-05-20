@@ -21,6 +21,12 @@
     "signIn": "Sign In",
     "alreadyRegistered": "Already have an account?"
   },
+  "forgotPassword": {
+    "introText": "Enter your email address to receive the password reset code",
+    "email": "Email",
+    "signIn": "Sign In",
+    "rememberPassword": "Remember your password?"
+  },
   "validation": {
     "email": "Please enter a valid email",
     "name": "Please enter a valid name",
