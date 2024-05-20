@@ -9,10 +9,10 @@ import { useSelector } from 'react-redux'
 import * as Yup from 'yup'
 
 interface SignInFormProps {
-  onNavigateResetScreen: () => {}
+  onNavigateForgotScreen: (email: string) => {}
 }
 
-const SignInForm = ({ onNavigateResetScreen }: SignInFormProps) => {
+const SignInForm = ({ onNavigateForgotScreen }: SignInFormProps) => {
   const [showPassword, setShowPassword] = useState(false)
   const authState = useSelector((state: any) => state.user.auth)
   const { t } = useTranslation()
@@ -39,6 +39,7 @@ const SignInForm = ({ onNavigateResetScreen }: SignInFormProps) => {
         console.log({ val, errors, touched })
       },
     })
+
   return (
     <VStack space={3} mt="5">
       {/* E-mail */}
@@ -86,7 +87,7 @@ const SignInForm = ({ onNavigateResetScreen }: SignInFormProps) => {
           color: !authState.loading ? 'indigo.500' : 'coolGray.600',
         }}
         alignSelf="flex-end"
-        onPress={onNavigateResetScreen}>
+        onPress={() => onNavigateForgotScreen(values.email)}>
         {t('signIn.forgotPassword')}
       </Link>
 

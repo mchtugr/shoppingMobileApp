@@ -21,6 +21,12 @@
     "signIn": "Anmelden",
     "alreadyRegistered": "Sie haben bereits ein Konto?"
   },
+  "forgotPassword": {
+    "introText": "Geben Sie Ihre E-Mail-Adresse ein, um den Code zum Zurücksetzen des Passworts zu erhalten",
+    "email": "Email",
+    "signIn": "Anmelden",
+    "rememberPassword": "Erinnern Sie sich an Ihr Passwort?"
+  },
   "validation": {
     "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
     "name": "Bitte geben Sie einen gültigen Namen ein",

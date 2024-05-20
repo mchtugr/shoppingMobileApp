@@ -1,10 +1,12 @@
-import { Box, Center, HStack, Heading, Link, Text, View } from 'native-base'
+import { Box, Center, Heading, HStack, Link, Text, View } from 'native-base'
 import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import SignInForm from '~/components/forms/SignInForm'
 import { AuthStackRoutes } from '~/navigation/types'
+
 import styles from './SignIn.styles'
+
 interface SignInProps {
   navigation: any
 }
@@ -42,7 +44,7 @@ const SignIn = ({ navigation }: SignInProps) => {
                 }}
                 onPress={() =>
                   !authState.authLoading &&
-                  navigation.navigate(AuthStackRoutes.SignIn)
+                  navigation.navigate(AuthStackRoutes.SignUp)
                 }>
                 {' '}
                 {t('signIn.register')}

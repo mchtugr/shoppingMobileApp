@@ -1,9 +1,10 @@
-import { Box, HStack, Heading, Link, ScrollView, Text, View } from 'native-base'
+import { Box, Heading, HStack, Link, ScrollView, Text, View } from 'native-base'
 import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import SignUpForm from '~/components/forms/SignUpForm'
 import { AuthStackRoutes } from '~/navigation/types'
+
 import styles from './SignUp.styles'
 
 interface SignupProps {
