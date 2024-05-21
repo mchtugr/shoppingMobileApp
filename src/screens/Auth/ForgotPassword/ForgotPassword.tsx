@@ -2,6 +2,7 @@ import { View } from 'native-base'
 import React from 'react'
 import ForgotPasswordForm from '~/components/forms/ForgotPasswordForm'
 
+import CodeVerificationForm from '~/components/forms/CodeVerificationForm'
 import styles from './ForgotPassword.styles'
 
 interface ForgotPasswordProps {
@@ -12,7 +13,7 @@ const ForgotPassword = ({ route }: ForgotPasswordProps) => {
   const { email } = route.params
   return (
     <View style={styles.container}>
-      <ForgotPasswordForm email={email} />
+      {false ? <ForgotPasswordForm email={email} /> : <CodeVerificationForm />}
     </View>
   )
 }
