@@ -22,10 +22,20 @@
     "alreadyRegistered": "Sie haben bereits ein Konto?"
   },
   "forgotPassword": {
-    "introText": "Geben Sie Ihre E-Mail-Adresse ein, um den Code zum Zurücksetzen des Passworts zu erhalten",
-    "email": "Email",
-    "signIn": "Anmelden",
-    "rememberPassword": "Erinnern Sie sich an Ihr Passwort?"
+    "verify": {
+      "introText": "Geben Sie Ihre E-Mail-Adresse ein, um fortzufahren",
+      "email": "Email",
+      "getOtp": "Holen Sie sich OTP",
+      "continue": "Weitermachen",
+      "rememberPassword": "Erinnern Sie sich an Ihr Passwort?",
+      "description": "Ein 4-stelliges OTP wird an Ihre E-Mail-Adresse gesendet",
+      "signIn": "Anmelden"
+    },
+    "otp": {
+      "introText": "Ein 4-stelliger Code wurde an {{email}} gesendet",
+      "verify": "Verifizieren",
+      "resend": "Erneut senden"
+    }
   },
   "validation": {
     "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",

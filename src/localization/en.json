@@ -22,10 +22,19 @@
     "alreadyRegistered": "Already have an account?"
   },
   "forgotPassword": {
-    "introText": "Enter your email address to receive the password reset code",
-    "email": "Email",
-    "signIn": "Sign In",
-    "rememberPassword": "Remember your password?"
+    "verify": {
+      "introText": "Enter you email to continue",
+      "email": "Email",
+      "continue": "Continue",
+      "rememberPassword": "Remember your password?",
+      "description": "A 4 digit OTP will be sent to your email",
+      "signIn": "Sign In"
+    },
+    "otp": {
+      "introText": "A 4 digit code has been sent to {{email}}",
+      "verify": "Verify",
+      "resend": "Resend"
+    }
   },
   "validation": {
     "email": "Please enter a valid email",
