@@ -25,6 +25,7 @@
     "verify": {
       "introText": "Geben Sie Ihre E-Mail-Adresse ein, um fortzufahren",
       "email": "Email",
+      "emailVerify": "E-Mail-Bestätigung",
       "getOtp": "Holen Sie sich OTP",
       "continue": "Weitermachen",
       "rememberPassword": "Erinnern Sie sich an Ihr Passwort?",

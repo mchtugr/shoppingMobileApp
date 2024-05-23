@@ -25,6 +25,7 @@
     "verify": {
       "introText": "Enter you email to continue",
       "email": "Email",
+      "emailVerify": "email verify",
       "continue": "Continue",
       "rememberPassword": "Remember your password?",
       "description": "A 4 digit OTP will be sent to your email",
