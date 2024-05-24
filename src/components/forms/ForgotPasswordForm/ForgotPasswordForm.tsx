@@ -5,10 +5,7 @@ import {
   Button,
   Center,
   FormControl,
-  HStack,
-  Heading,
   Input,
-  Link,
   Text,
   VStack,
   WarningOutlineIcon,
@@ -16,7 +13,6 @@ import {
 import * as React from 'react'
 import { useTranslation } from 'react-i18next'
 import { GestureResponderEvent } from 'react-native'
-import { useSelector } from 'react-redux'
 import * as Yup from 'yup'
 import { AuthStackProps, AuthStackRoutes } from '~/navigation/types'
 
@@ -25,7 +21,6 @@ interface ForgotPasswordFormProps {
 }
 
 const ForgotPasswordForm = ({ email }: ForgotPasswordFormProps) => {
-  const authState = useSelector((state: any) => state.user.auth)
   const { t } = useTranslation()
   const navigation = useNavigation<AuthStackProps>()
 
@@ -35,42 +30,29 @@ const ForgotPasswordForm = ({ email }: ForgotPasswordFormProps) => {
       .required(t('validation.required')),
   })
 
-  const {
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    isValid,
-    values,
-    errors,
-    touched,
-  } = useFormik({
-    validateOnMount: true,
-    initialValues: {
-      email,
-    },
-    validationSchema: ForgotPasswordSchema,
-    onSubmit: val => {
-      console.log({ val, errors, touched })
-    },
-  })
+  const { handleBlur, handleChange, handleSubmit, isValid, values, errors } =
+    useFormik({
+      validateOnMount: true,
+      initialValues: {
+        email,
+      },
+      validationSchema: ForgotPasswordSchema,
+      onSubmit: val => {
+        console.log(val)
+        navigation.navigate(AuthStackRoutes.CodeVerification, {
+          email: values.email,
+        })
+      },
+    })
 
   return (
-    <Center w="100%">
-      <Box safeArea p="2" py="8" w="90%" maxW="290">
-        <VStack space={3} mt="5">
-          <Heading
-            mt="1"
-            mb="2"
-            color="coolGray.600"
-            fontWeight="medium"
-            size="xs">
-            {t('forgotPassword.introText')}
-          </Heading>
-
+    <Center>
+      <Box safeArea w="90%" maxW="300">
+        <VStack space={3}>
           <FormControl>
             <Input
               value={values.email}
-              placeholder={t('forgotPassword.email')}
+              placeholder={t('forgotPassword.verify.email')}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               height="45"
@@ -82,6 +64,10 @@ const ForgotPasswordForm = ({ email }: ForgotPasswordFormProps) => {
             </FormControl.ErrorMessage>
           </FormControl>
 
+          <Text fontSize="xs" color="coolGray.600">
+            {t('forgotPassword.verify.description')}
+          </Text>
+
           <Button
             mt="2"
             colorScheme="indigo"
@@ -89,22 +75,8 @@ const ForgotPasswordForm = ({ email }: ForgotPasswordFormProps) => {
             onPress={
               handleSubmit as unknown as (e: GestureResponderEvent) => void
             }>
-            Submit
+            {t('forgotPassword.verify.continue')}
           </Button>
-          <HStack mt="6" justifyContent="center">
-            <Text fontSize="sm" color="coolGray.600">
-              {t('forgotPassword.rememberPassword')}{' '}
-            </Text>
-            <Link
-              _text={{
-                color: !authState ? 'indigo.500' : 'coolGray.600',
-                fontWeight: 'medium',
-                fontSize: 'sm',
-              }}
-              onPress={() => navigation.navigate(AuthStackRoutes.SignIn)}>
-              {t('forgotPassword.signIn')}
-            </Link>
-          </HStack>
         </VStack>
       </Box>
     </Center>

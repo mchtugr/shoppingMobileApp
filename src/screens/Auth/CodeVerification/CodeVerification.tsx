@@ -1,20 +1,19 @@
+import { t } from 'i18next'
 import { Box, Flex, Heading, IconButton, Image, View } from 'native-base'
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import * as React from 'react'
 import Icon from 'react-native-vector-icons/AntDesign'
-import ForgotPasswordForm from '~/components/forms/ForgotPasswordForm'
+import CodeVerificationForm from '~/components/forms/CodeVerificationForm'
 import { AuthStackRoutes } from '~/navigation/types'
 
-import styles from './ForgotPassword.styles'
+import styles from './CodeVerification.styles'
 
-interface ForgotPasswordProps {
+interface CodeVerificationProps {
   route: any
   navigation: any
 }
 
-const ForgotPassword = ({ route, navigation }: ForgotPasswordProps) => {
+const CodeVerification = ({ navigation, route }: CodeVerificationProps) => {
   const { email } = route.params
-  const { t } = useTranslation()
 
   const onNavigateSignIn = () => {
     navigation.navigate(AuthStackRoutes.SignIn)
@@ -36,22 +35,25 @@ const ForgotPassword = ({ route, navigation }: ForgotPasswordProps) => {
         <Box p="10" mb="10" rounded="full" style={styles.imageBox}>
           <Image
             style={styles.image}
-            source={require('~/assets/images/email-verify.png')}
+            source={require('~/assets/images/otp.png')}
             alt={t('forgotPassword.verify.emailVerify')}
           />
         </Box>
+        <Heading mt="10" textAlign="center">
+          {t('forgotPassword.otp.verification')}
+        </Heading>
         <Heading
-          mb="5"
+          mt="3"
           color="coolGray.600"
           fontWeight="medium"
           size="xs"
           textAlign="center">
-          {t('forgotPassword.verify.introText')}
+          {t('forgotPassword.otp.introText', { email })}
         </Heading>
       </Flex>
-      <ForgotPasswordForm email={email} />
+      <CodeVerificationForm />
     </View>
   )
 }
 
-export default ForgotPassword
+export default CodeVerification
