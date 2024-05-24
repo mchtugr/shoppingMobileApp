@@ -39,7 +39,9 @@ const ForgotPasswordForm = ({ email }: ForgotPasswordFormProps) => {
       validationSchema: ForgotPasswordSchema,
       onSubmit: val => {
         console.log(val)
-        navigation.navigate(AuthStackRoutes.CodeVerification, { email })
+        navigation.navigate(AuthStackRoutes.CodeVerification, {
+          email: values.email,
+        })
       },
     })
 

@@ -29,7 +29,8 @@ const ForgotPassword = ({ route, navigation }: ForgotPasswordProps) => {
         _icon={{
           color: 'orange.500',
         }}
-        onPress={onNavigateSignIn}></IconButton>
+        onPress={onNavigateSignIn}
+      />
 
       <Flex justifyContent="center" alignItems="center">
         <Box p="10" mb="10" rounded="full" style={styles.imageBox}>

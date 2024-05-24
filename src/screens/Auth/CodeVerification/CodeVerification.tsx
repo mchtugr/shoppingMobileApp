@@ -16,7 +16,7 @@ const CodeVerification = ({ navigation, route }: CodeVerificationProps) => {
   const { email } = route.params
 
   const onNavigateSignIn = () => {
-    navigation.navigate(AuthStackRoutes.SignIn, { email })
+    navigation.navigate(AuthStackRoutes.SignIn)
   }
 
   return (

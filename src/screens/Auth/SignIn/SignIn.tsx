@@ -18,7 +18,7 @@ const SignIn = ({ navigation }: SignInProps) => {
   return (
     <View style={styles.container}>
       <Center w="100%">
-        <Box safeArea p="2" py="8" w="90%" maxW="290">
+        <Box safeArea w="90%" maxW="300">
           <Heading size="lg" fontWeight="600" color="coolGray.800">
             {t('signIn.welcome')}
           </Heading>
@@ -32,10 +32,12 @@ const SignIn = ({ navigation }: SignInProps) => {
                 navigation.navigate(AuthStackRoutes.ForgotPassword, { email })
               }
             />
+
             <HStack mt="6" justifyContent="center">
               <Text fontSize="sm" color="coolGray.600">
                 {t('signIn.newUser')}
               </Text>
+
               <Link
                 _text={{
                   color: !authState.authLoading ? 'indigo.500' : 'coolGray.600',
