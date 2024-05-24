@@ -35,6 +35,7 @@
     "otp": {
       "introText": "Ein 4-stelliger Code wurde an {{email}} gesendet",
       "verify": "Verifizieren",
+      "verification": "Überprüfung",
       "resend": "Erneut senden"
     }
   },

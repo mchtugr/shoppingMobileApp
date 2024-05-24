@@ -33,6 +33,7 @@
     },
     "otp": {
       "introText": "A 4 digit code has been sent to {{email}}",
+      "verification": "Verification",
       "verify": "Verify",
       "resend": "Resend"
     }
