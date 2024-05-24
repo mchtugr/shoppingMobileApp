@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
+import CodeVerification from '~/screens/Auth/CodeVerification'
 import ForgotPassword from '~/screens/Auth/ForgotPassword'
 import ResetPassword from '~/screens/Auth/ResetPassword'
 import SignIn from '~/screens/Auth/SignIn'
@@ -19,6 +20,10 @@ const AUTH_ROUTES: Array<React.ComponentProps<typeof Stack.Screen>> = [
   {
     name: AuthStackRoutes.ForgotPassword,
     component: ForgotPassword,
+  },
+  {
+    name: AuthStackRoutes.CodeVerification,
+    component: CodeVerification,
   },
   {
     name: AuthStackRoutes.ResetPassword,

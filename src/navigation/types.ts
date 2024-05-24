@@ -4,6 +4,7 @@ export enum AuthStackRoutes {
   SignIn = 'SignIn',
   SignUp = 'SignUp',
   ForgotPassword = 'ForgotPassword',
+  CodeVerification = 'CodeVerification',
   ResetPassword = 'ResetPassword',
 }
 
@@ -17,6 +18,7 @@ export type AuthStackParamList = {
   [AuthStackRoutes.SignIn]: undefined
   [AuthStackRoutes.SignUp]: undefined
   [AuthStackRoutes.ForgotPassword]: { email: string | undefined }
+  [AuthStackRoutes.CodeVerification]: { email: string | undefined }
   [AuthStackRoutes.ResetPassword]: undefined
 }
 
