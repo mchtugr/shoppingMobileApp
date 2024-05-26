@@ -6,4 +6,9 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  closeButton: {
+    position: 'absolute',
+    right: 20,
+    top: 20,
+  },
 })

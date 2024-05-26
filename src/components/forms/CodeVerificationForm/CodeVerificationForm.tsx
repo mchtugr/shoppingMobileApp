@@ -10,6 +10,8 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field'
 
+import { useNavigation } from '@react-navigation/native'
+import { AuthStackProps, AuthStackRoutes } from '~/navigation/types'
 import styles from './CodeVerificationForm.styles'
 
 const CELL_COUNT = 4
@@ -26,6 +28,7 @@ const CodeVerificationForm = () => {
     setValue,
   })
   let intervalRef = useRef<NodeJS.Timeout>()
+  const navigation = useNavigation<AuthStackProps>()
 
   const startTimer = useCallback(() => {
     clearInterval(intervalRef.current)
@@ -70,6 +73,7 @@ const CodeVerificationForm = () => {
 
   const onOtpVerify = () => {
     console.log('Code will be verified here')
+    navigation.navigate(AuthStackRoutes.ResetPassword)
   }
 
   const onCodeResend = () => {

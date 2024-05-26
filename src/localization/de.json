@@ -39,6 +39,12 @@
       "resend": "Erneut senden"
     }
   },
+  "resetPassword": {
+    "password": "Passwort",
+    "confirmPassword": "Bestätige das Passwort",
+    "updatePassword": "Update Password",
+    "introText": "Gib dein neues Passwort ein"
+  },
   "validation": {
     "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
     "name": "Bitte geben Sie einen gültigen Namen ein",
