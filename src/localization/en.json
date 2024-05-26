@@ -38,6 +38,12 @@
       "resend": "Resend"
     }
   },
+  "resetPassword": {
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "updatePassword": "Update Password",
+    "introText": "Enter your new password"
+  },
   "validation": {
     "email": "Please enter a valid email",
     "name": "Please enter a valid name",
