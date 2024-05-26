@@ -26,11 +26,7 @@ const ResetPassword = ({ navigation }: ResetPasswordProps) => {
       />
       <Center w="100%">
         <Box safeArea p="2" py="8" w="90%" maxW="290">
-          <Heading
-            mb="3"
-            color="coolGray.600"
-            fontWeight="medium"
-            size="xs">
+          <Heading mb="3" color="coolGray.600" fontWeight="medium" size="xs">
             {t('resetPassword.introText')}
           </Heading>
 
