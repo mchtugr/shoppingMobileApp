@@ -4,7 +4,7 @@ import React from 'react'
 function Home(): React.JSX.Element {
   return (
     <View>
-      <Text>Home Screen</Text>
+      <Text>Home</Text>
     </View>
   )
 }
