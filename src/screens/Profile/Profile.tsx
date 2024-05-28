@@ -1,10 +1,11 @@
-import { Text, View } from 'native-base'
+import { View } from 'native-base'
 import React from 'react'
+import Map from '~/components/Map'
 
 function Profile(): React.JSX.Element {
   return (
     <View>
-      <Text>Profile</Text>
+      <Map />
     </View>
   )
 }
