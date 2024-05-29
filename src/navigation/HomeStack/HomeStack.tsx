@@ -1,5 +1,6 @@
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Home from '~/screens/Home/Home'
 import SelectAddress from '~/screens/Home/SelectAddress'
 import { HomeStackParamList, HomeStackRoutes } from '../types'
@@ -12,6 +13,16 @@ interface HomeStackProps {
 }
 
 const HomeStack = ({ navigation, route }: HomeStackProps) => {
+  useEffect(() => {
+    const focusedRouteName =
+      getFocusedRouteNameFromRoute(route) || HomeStackRoutes.Home
+
+    const tabBarDisplayStyle =
+      focusedRouteName === HomeStackRoutes.Home ? 'flex' : 'none'
+
+    navigation.setOptions({ tabBarStyle: { display: tabBarDisplayStyle } })
+  }, [navigation, route])
+
   return (
     <Stack.Navigator
       initialRouteName={HomeStackRoutes.Home}
