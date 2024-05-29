@@ -5,9 +5,7 @@ import { navigate } from '~/navigation/rootNavigation'
 import { HomeStackRoutes } from '~/navigation/types'
 import styles from './DeliveryAddressSelect.styles'
 
-interface DeliveryAddressSelectProps {}
-
-const DeliveryAddressSelect = (props: DeliveryAddressSelectProps) => {
+const DeliveryAddressSelect = () => {
   const onAddAddressNavigate = () => {
     navigate(HomeStackRoutes.SelectAddress, {})
   }
