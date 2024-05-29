@@ -3,10 +3,8 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   container: {
     display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    backgroundColor: 'grey',
   },
   inputContainer: {
     backgroundColor: '#dedede',

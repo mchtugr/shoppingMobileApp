@@ -1,14 +1,24 @@
-import { Box, Flex, Text, View } from 'native-base'
+import { Box, Flex, Pressable, Text, View } from 'native-base'
 import * as React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { navigate } from '~/navigation/rootNavigation'
+import { HomeStackRoutes } from '~/navigation/types'
 import styles from './DeliveryAddressSelect.styles'
 
 interface DeliveryAddressSelectProps {}
 
 const DeliveryAddressSelect = (props: DeliveryAddressSelectProps) => {
+  const onAddAddressNavigate = () => {
+    navigate(HomeStackRoutes.SelectAddress, {})
+  }
+
   return (
     <View style={styles.container}>
-      <Flex rounded="full" style={styles.inputContainer} flexDirection="row">
+      <Pressable
+        rounded="full"
+        style={styles.inputContainer}
+        flexDirection="row"
+        onPress={onAddAddressNavigate}>
         <Box mr="1">
           <Icon name="location-pin" size={20} />
         </Box>
@@ -28,7 +38,7 @@ const DeliveryAddressSelect = (props: DeliveryAddressSelectProps) => {
         <Box ml="auto">
           <Icon name="keyboard-arrow-down" size={20} />
         </Box>
-      </Flex>
+      </Pressable>
     </View>
   )
 }

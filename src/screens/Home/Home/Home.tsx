@@ -1,10 +1,12 @@
-import { Text, View } from 'native-base'
+import { View } from 'native-base'
 import React from 'react'
+import DeliveryAddressSelect from '~/components/DeliveryAddressSelect'
+import styles from './Home.styles'
 
 function Home(): React.JSX.Element {
   return (
-    <View>
-      <Text>Home Page</Text>
+    <View style={styles.container}>
+      <DeliveryAddressSelect />
     </View>
   )
 }
