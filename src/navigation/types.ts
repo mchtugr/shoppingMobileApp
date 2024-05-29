@@ -8,12 +8,6 @@ export enum AuthStackRoutes {
   ResetPassword = 'ResetPassword',
 }
 
-export enum BottomTabBarRoutes {
-  Home = 'Home',
-  Orders = 'Orders',
-  Profile = 'Profile',
-}
-
 export type AuthStackParamList = {
   [AuthStackRoutes.SignIn]: undefined
   [AuthStackRoutes.SignUp]: undefined
@@ -24,8 +18,26 @@ export type AuthStackParamList = {
 
 export type AuthStackProps = NavigationProp<AuthStackParamList>
 
+export enum HomeStackRoutes {
+  Home = 'Home',
+  DeliveryAddressSelect = 'DeliveryAddressSelect',
+}
+
+export type HomeStackParamList = {
+  [HomeStackRoutes.Home]: undefined
+  [HomeStackRoutes.DeliveryAddressSelect]: undefined
+}
+
+export type HomeStackProps = NavigationProp<HomeStackParamList>
+
+export enum BottomTabBarRoutes {
+  HomeStack = 'HomeStack',
+  Orders = 'Orders',
+  Profile = 'Profile',
+}
+
 export type BottomTabBarParamList = {
-  [BottomTabBarRoutes.Home]: undefined
+  [BottomTabBarRoutes.HomeStack]: undefined
   [BottomTabBarRoutes.Orders]: undefined
   [BottomTabBarRoutes.Profile]: undefined
 }
