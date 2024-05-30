@@ -5,4 +5,8 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  closeButton: {
+    position: 'absolute',
+    left: 20,
+  },
 })
