@@ -4,12 +4,13 @@ import {
   Divider,
   Flex,
   IconButton,
+  ScrollView,
   Text,
   View,
 } from 'native-base'
 import React from 'react'
 import Icon from 'react-native-vector-icons/AntDesign'
-import AddressListItem from '~/components/address/AddressListItem/AddressListItem'
+import AddressList from '~/components/address/AddressList'
 import { HomeStackRoutes } from '~/navigation/types'
 
 import styles from './SelectAddress.styles'
@@ -37,22 +38,22 @@ const SelectAddress = ({ navigation }: SelectAddressProps) => {
         Select Delivery Address
       </Flex>
       <Divider mt="2" />
-      <Flex px="2" mt="3">
-        <Text textAlign="center">
-          You can edit or delete your location and address details by clicking
-          edit button
-        </Text>
-        <Button
-          leftIcon={<AddIcon />}
-          mt="5"
-          variant="outline"
-          onPress={onNavigateAddAddress}>
-          Add New Address
-        </Button>
-      </Flex>
-      <AddressListItem isSelected />
-      <AddressListItem />
-      <AddressListItem />
+      <ScrollView mx="2" showsVerticalScrollIndicator={false}>
+        <Flex mt="3">
+          <Text>
+            You can edit or delete your location and address details by clicking
+            edit button
+          </Text>
+          <Button
+            leftIcon={<AddIcon />}
+            mt="3"
+            variant="outline"
+            onPress={onNavigateAddAddress}>
+            Add New Address
+          </Button>
+        </Flex>
+        <AddressList />
+      </ScrollView>
     </View>
   )
 }

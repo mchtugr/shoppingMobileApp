@@ -6,10 +6,16 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import styles from './AddressListItem.styles'
 
 interface AddressListItemProps {
-  isSelected?: boolean
+  address: {
+    id: number | string
+    isSelected: boolean
+    title: string
+    address: string
+    phone: string
+  }
 }
 
-const AddressListItem = ({ isSelected = false }: AddressListItemProps) => {
+const AddressListItem = ({ address }: AddressListItemProps) => {
   const onAddressSelect = () => {
     console.log('====================================')
     console.log('On Address Select')
@@ -22,15 +28,10 @@ const AddressListItem = ({ isSelected = false }: AddressListItemProps) => {
     console.log('====================================')
   }
   return (
-    <Pressable
-      p="3"
-      m="2"
-      mb="0"
-      style={styles.container}
-      onPress={onAddressSelect}>
+    <Pressable p="3" mt="2" style={styles.container} onPress={onAddressSelect}>
       <Box pl="25">
         <Box mt="0.5" style={styles.checkbox}>
-          {isSelected ? (
+          {address.isSelected ? (
             <Icon name="record-circle-outline" size={15} />
           ) : (
             <Icon name="checkbox-blank-circle-outline" size={15} />
@@ -38,8 +39,11 @@ const AddressListItem = ({ isSelected = false }: AddressListItemProps) => {
         </Box>
         <Box flexDir="row" justifyContent="space-between">
           <Box>
-            <Heading size="sm">Address Title</Heading>
-            <Text fontSize="xs">Some street 34000 Istanbul</Text>
+            <Heading size="sm">{address.title}</Heading>
+            <Text fontSize="xs">{address.address}</Text>
+            <Text mt="1" fontSize="xs">
+              {address.phone}
+            </Text>
           </Box>
           <TouchableOpacity onPress={onAddressEdit}>
             <Box
