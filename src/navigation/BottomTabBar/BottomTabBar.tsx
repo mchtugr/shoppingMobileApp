@@ -1,17 +1,18 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import Home from '~/screens/Home'
+
 import Orders from '~/screens/Orders'
 import Profile from '~/screens/Profile'
+import HomeStack from '../HomeStack/HomeStack'
 import { BottomTabBarParamList, BottomTabBarRoutes } from '../types'
 
 const BOTTOM_TAB_BAR_ROUTES: Array<
   React.ComponentProps<typeof BottomTab.Screen>
 > = [
   {
-    name: BottomTabBarRoutes.Home,
-    component: Home,
+    name: BottomTabBarRoutes.HomeStack,
+    component: HomeStack,
   },
   {
     name: BottomTabBarRoutes.Orders,
@@ -28,14 +29,14 @@ const BottomTab = createBottomTabNavigator<BottomTabBarParamList>()
 function BottomTabBar(): React.JSX.Element {
   return (
     <BottomTab.Navigator
-      initialRouteName={BottomTabBarRoutes.Home}
+      initialRouteName={BottomTabBarRoutes.HomeStack}
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarHideOnKeyboard: true,
         tabBarIcon: ({ color }) => {
           let iconName: string
           switch (route.name) {
-            case BottomTabBarRoutes.Home:
+            case BottomTabBarRoutes.HomeStack:
               iconName = 'home'
               break
             case BottomTabBarRoutes.Orders:
