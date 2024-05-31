@@ -1,6 +1,6 @@
-import DeliveryAddressSelect from '~/components/address/DeliveryAddressSelect'
 import { View } from 'native-base'
 import React from 'react'
+import DeliveryAddressSelect from '~/components/address/DeliveryAddressSelect'
 
 import styles from './Home.styles'
 
