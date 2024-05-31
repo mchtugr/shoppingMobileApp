@@ -9,6 +9,7 @@ import {
 } from 'native-base'
 import React from 'react'
 import Icon from 'react-native-vector-icons/AntDesign'
+import AddressListItem from '~/components/address/AddressListItem/AddressListItem'
 import { HomeStackRoutes } from '~/navigation/types'
 
 import styles from './SelectAddress.styles'
@@ -49,6 +50,9 @@ const SelectAddress = ({ navigation }: SelectAddressProps) => {
           Add New Address
         </Button>
       </Flex>
+      <AddressListItem isSelected />
+      <AddressListItem />
+      <AddressListItem />
     </View>
   )
 }
