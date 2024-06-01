@@ -1,5 +1,6 @@
-import { Text, View } from 'native-base'
+import { View } from 'native-base'
 import React from 'react'
+import RouteHeader from '~/components/RouteHeader/RouteHeader'
 import { HomeStackRoutes } from '~/navigation/types'
 
 import styles from './AddAddress.styles'
@@ -14,7 +15,7 @@ const AddAddress = ({ navigation }: AddAddressProps) => {
   }
   return (
     <View style={styles.container}>
-      <Text>Add address</Text>
+      <RouteHeader title="Add New Address" onClose={onNavigateHome} />
     </View>
   )
 }

@@ -1,15 +1,6 @@
-import {
-  AddIcon,
-  Button,
-  Divider,
-  Flex,
-  IconButton,
-  ScrollView,
-  Text,
-  View,
-} from 'native-base'
+import { AddIcon, Button, Flex, ScrollView, Text, View } from 'native-base'
 import React from 'react'
-import Icon from 'react-native-vector-icons/AntDesign'
+import RouteHeader from '~/components/RouteHeader/RouteHeader'
 import AddressList from '~/components/address/AddressList'
 import { HomeStackRoutes } from '~/navigation/types'
 
@@ -24,20 +15,13 @@ const SelectAddress = ({ navigation }: SelectAddressProps) => {
     navigation.navigate(HomeStackRoutes.Home)
   }
 
-  const onNavigateAddAddress = () => {}
+  const onNavigateAddAddress = () => {
+    navigation.navigate(HomeStackRoutes.AddAddress, {})
+  }
 
   return (
     <View style={styles.container}>
-      <Flex mt="2" alignItems="center" flexDir="row" justifyContent="center">
-        <IconButton
-          style={styles.closeButton}
-          icon={<Icon name="close" size={20} />}
-          borderRadius="full"
-          onPress={onNavigateHome}
-        />
-        Select Delivery Address
-      </Flex>
-      <Divider mt="2" />
+      <RouteHeader title="Select Delivery Address" onClose={onNavigateHome} />
       <ScrollView mx="2" showsVerticalScrollIndicator={false}>
         <Flex mt="3">
           <Text>
