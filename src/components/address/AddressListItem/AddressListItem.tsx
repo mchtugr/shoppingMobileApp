@@ -2,6 +2,8 @@ import { Box, Heading, Pressable, Text } from 'native-base'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { navigate } from '~/navigation/rootNavigation'
+import { HomeStackRoutes } from '~/navigation/types'
 
 import styles from './AddressListItem.styles'
 
@@ -23,9 +25,7 @@ const AddressListItem = ({ address }: AddressListItemProps) => {
   }
 
   const onAddressEdit = () => {
-    console.log('====================================')
-    console.log('On Address Edit')
-    console.log('====================================')
+    navigate(HomeStackRoutes.EditAddress)
   }
   return (
     <Pressable p="3" mt="2" style={styles.container} onPress={onAddressSelect}>
