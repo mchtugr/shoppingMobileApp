@@ -21,11 +21,13 @@ export type AuthStackProps = NavigationProp<AuthStackParamList>
 export enum HomeStackRoutes {
   Home = 'Home',
   SelectAddress = 'SelectAddress',
+  AddAddress = 'AddAddress',
 }
 
 export type HomeStackParamList = {
   [HomeStackRoutes.Home]: undefined
   [HomeStackRoutes.SelectAddress]: undefined
+  [HomeStackRoutes.AddAddress]: undefined
 }
 
 export type HomeStackProps = NavigationProp<HomeStackParamList>
