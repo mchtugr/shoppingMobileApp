@@ -1,8 +1,8 @@
-import { navigate } from '~/navigation/rootNavigation'
-import { HomeStackRoutes } from '~/navigation/types'
 import { Box, Flex, Pressable, Text, View } from 'native-base'
 import * as React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { navigate } from '~/navigation/rootNavigation'
+import { HomeStackRoutes } from '~/navigation/types'
 
 import styles from './DeliveryAddressSelect.styles'
 
