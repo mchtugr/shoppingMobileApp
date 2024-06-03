@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   container: {
@@ -10,6 +10,16 @@ export default StyleSheet.create({
   },
   checkbox: {
     position: 'absolute',
-    left: 1,
+  },
+  mapContainer: {
+    width: Dimensions.get('window').width,
+    height: 100,
+    borderColor: 'silver',
+
+    borderBottomLeftRadius: 3,
+    borderBottomRightRadius: 3,
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
   },
 })

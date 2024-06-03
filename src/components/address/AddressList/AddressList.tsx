@@ -10,6 +10,10 @@ const mockAddressData = [
     title: 'Home',
     address: 'Ataturk Mah, Kadikoy, Istanbul',
     phone: '555*****37',
+    coordinate: {
+      latitude: 40.98815406447282,
+      longitude: 29.02872167269661,
+    },
   },
   {
     id: 2,
@@ -17,6 +21,10 @@ const mockAddressData = [
     title: 'Work',
     address: 'Inonu Mah, Kartal, Istanbul',
     phone: '554*****45',
+    coordinate: {
+      latitude: 41.0082,
+      longitude: 28.9784,
+    },
   },
   {
     id: 3,
@@ -24,6 +32,10 @@ const mockAddressData = [
     title: 'Friend',
     address: 'Bahcelievler Mah, Maltepe, Istanbul',
     phone: '553*****69',
+    coordinate: {
+      latitude: 41.0082,
+      longitude: 28.9784,
+    },
   },
   {
     id: 4,
@@ -31,6 +43,10 @@ const mockAddressData = [
     title: 'Home',
     address: 'Ataturk Mah, Kadikoy, Istanbul',
     phone: '555*****37',
+    coordinate: {
+      latitude: 41.0082,
+      longitude: 28.9784,
+    },
   },
   {
     id: 5,
@@ -38,6 +54,10 @@ const mockAddressData = [
     title: 'Work',
     address: 'Inonu Mah, Kartal, Istanbul',
     phone: '554*****45',
+    coordinate: {
+      latitude: 41.0082,
+      longitude: 28.9784,
+    },
   },
   {
     id: 6,
@@ -45,6 +65,10 @@ const mockAddressData = [
     title: 'Friend',
     address: 'Bahcelievler Mah, Maltepe, Istanbul',
     phone: '553*****69',
+    coordinate: {
+      latitude: 41.0082,
+      longitude: 28.9784,
+    },
   },
   {
     id: 7,
@@ -52,6 +76,10 @@ const mockAddressData = [
     title: 'Home',
     address: 'Ataturk Mah, Kadikoy, Istanbul',
     phone: '555*****37',
+    coordinate: {
+      latitude: 41.0082,
+      longitude: 28.9784,
+    },
   },
   {
     id: 8,
@@ -59,6 +87,10 @@ const mockAddressData = [
     title: 'Work',
     address: 'Inonu Mah, Kartal, Istanbul',
     phone: '554*****45',
+    coordinate: {
+      latitude: 41.0082,
+      longitude: 28.9784,
+    },
   },
   {
     id: 9,
@@ -66,6 +98,10 @@ const mockAddressData = [
     title: 'Friend',
     address: 'Bahcelievler Mah, Maltepe, Istanbul',
     phone: '553*****69',
+    coordinate: {
+      latitude: 41.0082,
+      longitude: 28.9784,
+    },
   },
 ]
 

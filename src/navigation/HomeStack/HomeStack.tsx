@@ -1,10 +1,10 @@
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import React, { useEffect } from 'react'
 import AddAddress from '~/screens/Home/AddAddress'
 import EditAddress from '~/screens/Home/EditAddress'
 import Home from '~/screens/Home/Home'
 import SelectAddress from '~/screens/Home/SelectAddress'
-import React, { useEffect } from 'react'
 
 import { HomeStackParamList, HomeStackRoutes } from '../types'
 
