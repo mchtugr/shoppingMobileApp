@@ -3,11 +3,12 @@ import * as React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { navigate } from '~/navigation/rootNavigation'
 import { HomeStackRoutes } from '~/navigation/types'
+
 import styles from './DeliveryAddressSelect.styles'
 
 const DeliveryAddressSelect = () => {
   const onAddAddressNavigate = () => {
-    navigate(HomeStackRoutes.SelectAddress, {})
+    navigate(HomeStackRoutes.SelectAddress)
   }
 
   return (
