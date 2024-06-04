@@ -1,12 +1,10 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    height: 400,
-    width: 400,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+  mapContainer: {
+    width: Dimensions.get('window').width,
+    height: 100,
+    borderColor: 'silver',
   },
   map: {
     ...StyleSheet.absoluteFillObject,

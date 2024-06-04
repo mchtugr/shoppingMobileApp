@@ -1,8 +1,8 @@
 import { Box, Heading, Pressable, Text } from 'native-base'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Map from '~/components/Map'
 import { navigate } from '~/navigation/rootNavigation'
 import { HomeStackRoutes } from '~/navigation/types'
 
@@ -66,21 +66,7 @@ const AddressListItem = ({ address }: AddressListItemProps) => {
           </TouchableOpacity>
         </Box>
       </Box>
-      {address.isSelected && (
-        <Box style={styles.mapContainer} flex="1">
-          <MapView
-            provider={PROVIDER_GOOGLE}
-            initialRegion={region}
-            pitchEnabled={false}
-            rotateEnabled={false}
-            zoomEnabled={false}
-            scrollEnabled={false}
-            showsMyLocationButton={false}
-            style={styles.map}>
-            <Marker coordinate={address.coordinate} />
-          </MapView>
-        </Box>
-      )}
+      {address.isSelected && <Map coordinate={address.coordinate} />}
     </Pressable>
   )
 }
