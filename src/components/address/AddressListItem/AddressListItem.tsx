@@ -66,7 +66,9 @@ const AddressListItem = ({ address }: AddressListItemProps) => {
           </TouchableOpacity>
         </Box>
       </Box>
-      {address.isSelected && <Map coordinate={address.coordinate} />}
+      {address.isSelected && (
+        <Map coordinate={address.coordinate} hasFixedMarker />
+      )}
     </Pressable>
   )
 }

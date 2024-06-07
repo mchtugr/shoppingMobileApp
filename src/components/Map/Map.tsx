@@ -15,9 +15,10 @@ interface MapProps {
     longitude: number
   }
   isAnimated?: boolean
+  hasFixedMarker?: boolean
 }
 
-const Map = ({ coordinate, isAnimated }: MapProps) => {
+const Map = ({ coordinate, hasFixedMarker, isAnimated }: MapProps) => {
   const region = new AnimatedRegion({
     ...coordinate,
     latitudeDelta: 0.003,
@@ -25,7 +26,11 @@ const Map = ({ coordinate, isAnimated }: MapProps) => {
   })
 
   return (
-    <Box style={styles.mapContainer} flex="1">
+    <Box
+      style={styles.mapContainer}
+      flex="1"
+      justifyContent="center"
+      alignItems="center">
       <Animated
         provider={PROVIDER_GOOGLE}
         region={region}
@@ -35,7 +40,7 @@ const Map = ({ coordinate, isAnimated }: MapProps) => {
         scrollEnabled={!!isAnimated}
         showsMyLocationButton={!!isAnimated}
         style={styles.map}>
-        <Marker coordinate={coordinate} />
+        {hasFixedMarker && <Marker coordinate={coordinate} />}
       </Animated>
     </Box>
   )
