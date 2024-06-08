@@ -6,28 +6,14 @@ import Map from '~/components/Map'
 import { navigate } from '~/navigation/rootNavigation'
 import { HomeStackRoutes } from '~/navigation/types'
 
+import { Address } from '~/types/address'
 import styles from './AddressListItem.styles'
 
 interface AddressListItemProps {
-  address: {
-    id: number | string
-    isSelected: boolean
-    title: string
-    address: string
-    phone: string
-    coordinate: {
-      latitude: number
-      longitude: number
-    }
-  }
+  address: Address
 }
 
 const AddressListItem = ({ address }: AddressListItemProps) => {
-  const region = {
-    ...address.coordinate,
-    latitudeDelta: 0.003,
-    longitudeDelta: 0.003,
-  }
   const onAddressSelect = () => {
     console.log('====================================')
     console.log('On Address Select')
