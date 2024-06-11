@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import addressReducer from './addressSlice'
-import userReducer from './userSlice'
+
+import addressReducer from './slices/address'
+import userReducer from './slices/user'
 
 const store = configureStore({
   reducer: {

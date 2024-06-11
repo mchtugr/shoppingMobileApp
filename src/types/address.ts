@@ -1,3 +1,5 @@
+import { PermissionStatus } from 'react-native-permissions'
+
 export interface Coordinate {
   latitude: number
   longitude: number
@@ -15,4 +17,9 @@ export interface Address {
 export interface AddressState {
   addressList: Array<Address>
   geocoding: string
+  locationPermission: {
+    pending: boolean
+    error: string | undefined
+    status: PermissionStatus
+  }
 }

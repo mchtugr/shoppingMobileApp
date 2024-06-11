@@ -1,5 +1,8 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Address, AddressState } from '~/types/address'
+import { RESULTS } from 'react-native-permissions'
+
+import { requestLocationPermission } from '../actions/address'
 
 const initialState: AddressState = {
   addressList: [
@@ -104,6 +107,11 @@ const initialState: AddressState = {
     },
   ],
   geocoding: '',
+  locationPermission: {
+    pending: false,
+    error: '',
+    status: RESULTS.UNAVAILABLE,
+  },
 }
 
 export const addressSlice = createSlice({
@@ -113,6 +121,17 @@ export const addressSlice = createSlice({
     addAddress: (state: AddressState, action: PayloadAction<Address>) => {
       state.addressList = [...state.addressList, action.payload]
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(requestLocationPermission.pending, (state, action) => {
+      state.locationPermission.pending = true
+    })
+    builder.addCase(requestLocationPermission.fulfilled, (state, action) => {
+      state.locationPermission.status = action.payload
+    })
+    builder.addCase(requestLocationPermission.rejected, (state, action) => {
+      state.locationPermission.error = action.error.message
+    })
   },
 })
 
