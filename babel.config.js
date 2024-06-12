@@ -20,5 +20,14 @@ module.exports = {
         },
       },
     ],
+    [
+      'module:react-native-dotenv',
+      {
+        allowlist: ['MAPS_API_KEY'],
+        allowUndefined: false,
+        moduleName: '@env',
+        path: '.env',
+      },
+    ],
   ],
 }

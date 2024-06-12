@@ -1,33 +1,19 @@
 import { Box, Heading, Pressable, Text } from 'native-base'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Map from '~/components/Map'
 import { navigate } from '~/navigation/rootNavigation'
 import { HomeStackRoutes } from '~/navigation/types'
 
+import { Address } from '~/types/address'
 import styles from './AddressListItem.styles'
 
 interface AddressListItemProps {
-  address: {
-    id: number | string
-    isSelected: boolean
-    title: string
-    address: string
-    phone: string
-    coordinate: {
-      latitude: number
-      longitude: number
-    }
-  }
+  address: Address
 }
 
 const AddressListItem = ({ address }: AddressListItemProps) => {
-  const region = {
-    ...address.coordinate,
-    latitudeDelta: 0.003,
-    longitudeDelta: 0.003,
-  }
   const onAddressSelect = () => {
     console.log('====================================')
     console.log('On Address Select')
@@ -67,19 +53,7 @@ const AddressListItem = ({ address }: AddressListItemProps) => {
         </Box>
       </Box>
       {address.isSelected && (
-        <Box style={styles.mapContainer} flex="1">
-          <MapView
-            provider={PROVIDER_GOOGLE}
-            initialRegion={region}
-            pitchEnabled={false}
-            rotateEnabled={false}
-            zoomEnabled={false}
-            scrollEnabled={false}
-            showsMyLocationButton={false}
-            style={styles.map}>
-            <Marker coordinate={address.coordinate} />
-          </MapView>
-        </Box>
+        <Map coordinate={address.coordinate} hasFixedMarker />
       )}
     </Pressable>
   )

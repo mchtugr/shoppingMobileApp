@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import AddAddress from '~/screens/Home/AddAddress'
 import EditAddress from '~/screens/Home/EditAddress'
 import Home from '~/screens/Home/Home'
+import SaveAddressDetails from '~/screens/Home/SaveAddressDetails'
 import SelectAddress from '~/screens/Home/SelectAddress'
 
 import { HomeStackParamList, HomeStackRoutes } from '../types'
@@ -45,6 +46,10 @@ const HomeStack = ({ navigation, route }: HomeStackProps) => {
         <Stack.Screen
           name={HomeStackRoutes.EditAddress}
           component={EditAddress}
+        />
+        <Stack.Screen
+          name={HomeStackRoutes.SaveAddressDetails}
+          component={SaveAddressDetails}
         />
       </Stack.Group>
     </Stack.Navigator>

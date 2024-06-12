@@ -16,7 +16,7 @@ const SelectAddress = ({ navigation }: SelectAddressProps) => {
   }
 
   const onNavigateAddAddress = () => {
-    navigation.navigate(HomeStackRoutes.AddAddress, {})
+    navigation.navigate(HomeStackRoutes.AddAddress)
   }
 
   return (

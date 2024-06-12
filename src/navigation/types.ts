@@ -23,6 +23,7 @@ export enum HomeStackRoutes {
   SelectAddress = 'SelectAddress',
   AddAddress = 'AddAddress',
   EditAddress = 'EditAddress',
+  SaveAddressDetails = 'SaveAddressDetails',
 }
 
 export type HomeStackParamList = {
@@ -30,6 +31,7 @@ export type HomeStackParamList = {
   [HomeStackRoutes.SelectAddress]: undefined
   [HomeStackRoutes.AddAddress]: undefined
   [HomeStackRoutes.EditAddress]: undefined
+  [HomeStackRoutes.SaveAddressDetails]: undefined
 }
 
 export type HomeStackProps = NavigationProp<HomeStackParamList>
