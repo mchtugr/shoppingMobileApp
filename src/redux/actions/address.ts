@@ -15,13 +15,14 @@ export const requestLocationPermission = createAsyncThunk(
         break
       case 'windows':
         permission = PERMISSIONS.WINDOWS.LOCATION
+        break
       default:
         throw new Error('Unknown operating system')
     }
 
     const response = await request(permission, {
       title: '',
-      message:'',
+      message: '',
       buttonNeutral: 'Ask me later',
       buttonNegative: 'Cancel',
       buttonPositive: 'OK',

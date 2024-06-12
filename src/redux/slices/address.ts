@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Address, AddressState } from '~/types/address'
 import { RESULTS } from 'react-native-permissions'
+import { Address, AddressState } from '~/types/address'
 
 import { requestLocationPermission } from '../actions/address'
 
@@ -123,7 +123,7 @@ export const addressSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    builder.addCase(requestLocationPermission.pending, (state, action) => {
+    builder.addCase(requestLocationPermission.pending, state => {
       state.locationPermission.pending = true
     })
     builder.addCase(requestLocationPermission.fulfilled, (state, action) => {
