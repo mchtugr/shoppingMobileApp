@@ -9,9 +9,9 @@ import {
   Marker,
   PROVIDER_GOOGLE,
 } from 'react-native-maps'
-
+import LocationMarker from '~/components/address/LocationMarker'
 import { Coordinate } from '~/types/address'
-import LocationMarker from '../address/LocationMarker'
+
 import styles from './Map.styles'
 
 interface MapProps {
@@ -78,6 +78,7 @@ const Map = ({ coordinate, hasFixedMarker, isAnimated }: MapProps) => {
         zoomEnabled={!!isAnimated}
         scrollEnabled={!!isAnimated}
         showsMyLocationButton={!!isAnimated}
+        showsUserLocation={!!isAnimated}
         onRegionChangeComplete={onRegionChangeComplete}
         onRegionChange={onRegionChange}
         style={styles.map}>
